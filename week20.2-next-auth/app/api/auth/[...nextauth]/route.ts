@@ -1,5 +1,8 @@
 import NextAuth from "next-auth"
+import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
+import LinkedInProvider from "next-auth/providers/linkedin";
+
 
 const handler = NextAuth({
     providers: [
@@ -24,7 +27,19 @@ const handler = NextAuth({
             return null
            }
           }
-        })
+        }),
+
+        GoogleProvider({
+            clientId: "eko",
+            clientSecret: "kfldsf"
+          }),
+
+          LinkedInProvider({
+            clientId: 'sgjlkfgj',
+            clientSecret: "process.env.LINKEDIN_CLIENT_SECRET"
+          })
+
+
       ]
 })
 
