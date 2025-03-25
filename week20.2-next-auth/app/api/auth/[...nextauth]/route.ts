@@ -2,6 +2,7 @@ import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import LinkedInProvider from "next-auth/providers/linkedin";
+import Email from "next-auth/providers/email";
 
 
 const handler = NextAuth({
@@ -19,7 +20,7 @@ const handler = NextAuth({
            const user = {
             name: "leo",
             id:"1",
-            username:"example@gmail.com"
+            email:"example@gmail.com"
            }
            if(user){
             return user;
@@ -40,7 +41,8 @@ const handler = NextAuth({
           })
 
 
-      ]
+      ],
+      secret: process.env.NEXTAUTH_SECRET
 })
 
 export { handler as GET, handler as POST }
