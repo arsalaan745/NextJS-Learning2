@@ -18,9 +18,9 @@ const handler = NextAuth({
            const password = credentials?.password;
 
            const user = {
-            name: "leo",
+            name: "le23",
             id:"1",
-            email:"example@gmail.com"
+            email:"leo745@gmail.com"
            }
            if(user){
             return user;
